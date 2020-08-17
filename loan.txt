@@ -1,0 +1,14 @@
+insert into Loan VALUES ('loan no ','branch name',loan amount);
+insert into Loan VALUES ('L-25','Adgaon',10800.0);
+insert into Loan VALUES ('L-17','Adgaon',18050.0);
+insert into Loan VALUES ('L-09','Sharanpur road',105000.0);
+insert into Loan VALUES ('L-11','Sharanpur road',20500.0);
+insert into Loan VALUES ('L-16','Gangapur Road',5000.0);
+insert into Loan VALUES ('L-13','Gangapur Road',1000.0);
+insert into Loan VALUES ('L-14','Gangapur Road',10930.0);
+insert into Loan VALUES ('L-20','Jail Road',10850.0);
+insert into Loan VALUES ('L-10','Mumbai Naka',1000.0);
+insert into Loan VALUES ('L-21','Pathardi phata',1450.0);
+insert into Loan VALUES ('L-03','Shivaji nagar',100000.0);
+insert into Loan VALUES ('L-22','Shivaji nagar',30000.0);
+insert into Loan VALUES ('L-30','Shivaji nagar',10652.0);
