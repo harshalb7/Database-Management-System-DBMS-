@@ -1,0 +1,10 @@
+insert into depositor VALUES ('Name','account no');
+insert into depositor VALUES ('Amit','SH-109');
+insert into depositor VALUES ('Arpita','A-456');
+insert into depositor VALUES ('Mayur','G-852');
+insert into depositor VALUES ('Palvit','J-555');
+insert into depositor VALUES ('Pranav','J-9856');
+insert into depositor VALUES ('Radha','M-555');
+insert into depositor VALUES ('Rutik','M-944');
+insert into depositor VALUES ('Rutuja','P-121');
+insert into depositor VALUES ('Sohil','P-124');
