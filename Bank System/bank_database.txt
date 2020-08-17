@@ -1,0 +1,152 @@
+
+show databases;
+create database bank_system;
+use bank_system;
+create table Account( branch_name varchar(15) NOT NULL, account_number varchar(10), balance integer(8), PRIMARY KEY ( account_number), CHECK ( balance >= 0 ));
+insert into Account VALUES ('Adgaon','A-101',13200.0);
+insert into Account VALUES ('Adgaon','A-102',12654.0);
+insert into Account VALUES ('Sharanpur road','SH-103',19990.0);
+insert into Account VALUES ('Sharanpur road','SH-109',28000.0);
+insert into Account VALUES ('Sharanpur road','SH-123',2001.0);
+insert into Account VALUES ('Adgaon','A-456',6045.0);
+insert into Account VALUES ('Shivaji nagar','S-888',66045.0);
+insert into Account VALUES ('Gangapur Road','G-463',15632.0);
+insert into Account VALUES ('Gangapur Road','G-789',5123.0);
+insert into Account VALUES ('Gangapur Road','G-852',9456.0);
+insert into Account VALUES ('Gangapur Road','G-963',16022.0);
+insert into Account VALUES ('Jail Road','J-555',14001.0);
+insert into Account VALUES ('Jail Road','J-753',1254.0);
+insert into Account VALUES ('Jail Road','J-9856',9546.0);
+insert into Account VALUES ('Mumbai Naka','M-411',48728.0);
+insert into Account VALUES ('Mumbai Naka','M-555',13728.0);
+insert into Account VALUES ('Mumbai Naka','M-919',4872.0);
+insert into Account VALUES ('Mumbai Naka','M-944',7412.0);
+insert into Account VALUES ('Pathardi phata','P-121',18000.0);
+insert into Account VALUES ('Pathardi phata','P-122',8048.0);
+insert into Account VALUES ('Pathardi phata','P-123',4562.0);
+insert into Account VALUES ('Pathardi phata','P-124',14562.0);
+insert into Account VALUES ('Shivaji nagar','P-125',11000.0);
+insert into Account VALUES ('Shivaji nagar','P-126',78456.0);
+insert into Account VALUES ('Shivaji nagar','P-127',41256.0);
+desc account;
+select * from account;
+create table Branch ( branch_name varchar(15) NOT NULL, branch_city varchar(30), assets integer(8), PRIMARY KEY(branch_name), CHECK (assets >= 0));
+insert into branch VALUES ('Adgaon','Nashik',100000.0);
+insert into branch VALUES ('Sharanpur road','Nashik',200000.0);
+insert into branch VALUES ('Shivaji nagar','Nashik',300000.0);
+insert into branch VALUES ('Gangapur Road','Nashik',700000.0);
+insert into branch VALUES ('Jail Road','Nashik',600000.0);
+insert into branch VALUES ('Mumbai Naka','Nashik',500000.0);
+insert into branch VALUES ('Pathardi phata','Nashik',400000.0);
+desc branch;
+select * from branch;
+create table Customer ( cust_name varchar(20) NOT NULL, cust_street varchar(30), cust_city varchar(30), PRIMARY KEY(cust_name));
+desc customer;
+insert into customer VALUES ('Aarnav','Nashik Road','Nashik');
+insert into customer VALUES ('Abhishek','RK','Nashik');
+insert into customer VALUES ('Aditya','Trambakeshwar','Nashik');
+insert into customer VALUES ('Amit','Ganesh Wadi','Nashik');
+insert into customer VALUES ('Ankit','Dwarka','Nashik');
+insert into customer VALUES ('Arpita','Jatra hotel','Nashik');
+insert into customer VALUES ('Avantika','Amrutdham','Nashik');
+insert into customer VALUES ('Harshal','Hanuman nagar','Nashik');
+insert into customer VALUES ('Kiran','Nimani','Nashik');
+insert into customer VALUES ('Mayur','Amrutdham','Nashik');
+insert into customer VALUES ('Paarth','Hanuman Nagar','Nashik');
+insert into customer VALUES ('Palvit','Gangapur Road','Nashik');
+insert into customer VALUES ('Prachi','PK','Nashik');
+insert into customer VALUES ('Pranav','Gangapur Road','Nashik');
+insert into customer VALUES ('Puja','Amrutdham','Nashik');
+insert into customer VALUES ('Radha','Konark nagar','Nashik');
+insert into customer VALUES ('Riya','Hanuman nagar','Nashik');
+insert into customer VALUES ('Rutik','Dwarka','Nashik');
+insert into customer VALUES ('Rutuja','Satpur','Nashik');
+insert into customer VALUES ('Shrenik','Nimani','Nashik');
+insert into customer VALUES ('Shweta','Main Road','Nashik');
+insert into customer VALUES ('Sohil','Jail Road','Nashik');
+insert into customer VALUES ('Suraj','CCM','Nashik');
+insert into customer VALUES ('Ujjwala','RK','Nashik');
+insert into customer VALUES ('Vikas','Makhmalabad','Nashik');
+select * from customer;
+create table Depositor( cust_name varchar(20) NOT NULL, account_number varchar(10) NOT NULL, PRIMARY KEY ( cust_name, account_number ));
+insert into depositor VALUES ('Amit','SH-109');
+insert into depositor VALUES ('Arpita','A-456');
+insert into depositor VALUES ('Mayur','G-852');
+insert into depositor VALUES ('Palvit','J-555');
+insert into depositor VALUES ('Pranav','J-9856');
+insert into depositor VALUES ('Radha','M-555');
+insert into depositor VALUES ('Rutik','M-944');
+insert into depositor VALUES ('Rutuja','P-121');
+insert into depositor VALUES ('Sohil','P-124');
+desc depositor;
+select * from depositor;
+create table Loan(  loan_number varchar(5),branch_name varchar(15) NOT NULL, amount integer(8), PRIMARY KEY ( loan_number), CHECK ( amount >= 0 ) );
+desc loan;
+insert into Loan VALUES ('L-25','Adgaon',10800.0);
+insert into Loan VALUES ('L-17','Adgaon',18050.0);
+insert into Loan VALUES ('L-09','Sharanpur road',105000.0);
+insert into Loan VALUES ('L-11','Sharanpur road',20500.0);
+insert into Loan VALUES ('L-16','Gangapur Road',5000.0);
+insert into Loan VALUES ('L-13','Gangapur Road',1000.0);
+insert into Loan VALUES ('L-14','Gangapur Road',10930.0);
+insert into Loan VALUES ('L-20','Jail Road',10850.0);
+insert into Loan VALUES ('L-10','Mumbai Naka',1000.0);
+insert into Loan VALUES ('L-21','Pathardi phata',1450.0);
+insert into Loan VALUES ('L-03','Shivaji nagar',100000.0);
+insert into Loan VALUES ('L-22','Shivaji nagar',30000.0);
+insert into Loan VALUES ('L-30','Shivaji nagar',10652.0);
+select * from loan;
+create table Borrower (  loan_number varchar(5) NOT NULL, cust_name varchar(20) NOT NULL,PRIMARY KEY ( cust_name, loan_number) );
+desc borrower;
+insert into Borrower VALUES ('L-25','Aarnav');
+insert into Borrower VALUES ('L-17','Abhishek');
+insert into Borrower VALUES ('L-09','Aditya');
+insert into Borrower VALUES ('L-11','Ankit');
+insert into Borrower VALUES ('L-16','Harshal');
+insert into Borrower VALUES ('L-13','Kiran');
+insert into Borrower VALUES ('L-14','Paarth');
+insert into Borrower VALUES ('L-20','Prachi');
+insert into Borrower VALUES ('L-10','Riya');
+insert into Borrower VALUES ('L-21','Shrenik');
+insert into Borrower VALUES ('L-03','Suraj');
+insert into Borrower VALUES ('L-22','Ujjwala');
+insert into Borrower VALUES ('L-30','Vikas');
+select * from borrower;
+# Qureies;
+#1. Find the names of all branches in loan relation
+select branch_name from loan group by branch_name;
+#2. Find all loan numbers for loans made at Shivaji nagar Branch with loan amount > 12000
+select loan_number from loan where branch_name = 'Shivaji nagar' and amount > 12000;
+#3. Find all customers who have a loan from bank. Find their names,loan_no and loan amount
+select cust_name, borrower.loan_number, branch_name, amount from borrower, loan where borrower.loan_number = loan.loan_number;
+#4. List all customers in alphabetical order who have loan from Shivaji nagar branch
+select cust_name from borrower, loan where borrower.loan_number = loan.loan_number and branch_name = 'Shivaji nagar' order by cust_name;
+#5. Find all customers who have an account or loan or both at bank.
+select cust_name from depositor union select cust_name from borrower;
+#6. Find all customers who have both account and loan at bank.
+select distinct cust_name from borrower where cust_name in (select cust_name from customer);
+#7. Find all customer who have account but no loan at the bank
+select distinct cust_name from customer where cust_name not in (select cust_name from borrower);
+#8. Find average account balance at Shivaji nagar branch.
+select branch_name, avg(balance) from account where branch_name = 'Shivaji nagar' group by branch_name;
+#9. Find the average account balance at each branch
+select branch_name, avg(balance) from account group by branch_name;
+select branch_name, avg(balance) from account where branch_name = 'Shivaji nagar';
+#10. Find no. of depositors at each branch.
+select branch_name, count(distinct cust_name) from depositor,account where depositor.account_number = account.account_number group by branch_name;
+#11. Find the branches where average account balance > 12000.
+select branch_name from account group by branch_name having avg(balance) > 1200;
+select branch_name,avg(balance) from account group by branch_name having avg(balance) > 1200;
+#12. Find number of tuples in customer relation.
+select count( * ) as number_touple from customer;
+#13. Calculate total loan amount given by bank.
+select branch_name , sum( amount ) from loan group by branch_name;
+#14. Delete all loans with loan amount between 1300 and 1500.
+delete l.*, b.* from loan l left join borrower b on l.loan_number = b.loan_number where l.amount between 1300 and 1500;
+#15. Delete all tuples at every branch located in Sharanpur road.
+delete from account where branch_name = 'Sharanpur road';
+delete from branch where branch_name = 'Sharanpur road';
+delete from loan where branch_name = 'Sharanpur road';
+notee;
+Outfile disabled.
+exit();
