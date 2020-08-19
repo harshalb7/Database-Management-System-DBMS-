@@ -1,0 +1,14 @@
+insert into Borrower VALUES ('loan no ','Name');
+insert into Borrower VALUES ('L-25','Aarnav');
+insert into Borrower VALUES ('L-17','Abhishek');
+insert into Borrower VALUES ('L-09','Aditya');
+insert into Borrower VALUES ('L-11','Ankit');
+insert into Borrower VALUES ('L-16','Harshal');
+insert into Borrower VALUES ('L-13','Kiran');
+insert into Borrower VALUES ('L-14','Paarth');
+insert into Borrower VALUES ('L-20','Prachi');
+insert into Borrower VALUES ('L-10','Riya');
+insert into Borrower VALUES ('L-21','Shrenik');
+insert into Borrower VALUES ('L-03','Suraj');
+insert into Borrower VALUES ('L-22','Ujjwala');
+insert into Borrower VALUES ('L-30','Vikas');
