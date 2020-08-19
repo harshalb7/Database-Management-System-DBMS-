@@ -1,0 +1,8 @@
+insert into branch VALUES ('branch name','Nashik',assets);
+insert into branch VALUES ('Adgaon','Nashik',100000.0);
+insert into branch VALUES ('Sharanpur road','Nashik',200000.0);
+insert into branch VALUES ('Shivaji nagar','Nashik',300000.0);
+insert into branch VALUES ('Gangapur Road','Nashik',700000.0);
+insert into branch VALUES ('Jail Road','Nashik',600000.0);
+insert into branch VALUES ('Mumbai Naka','Nashik',500000.0);
+insert into branch VALUES ('Pathardi phata','Nashik',400000.0);
